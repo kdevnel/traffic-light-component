@@ -1,0 +1,64 @@
+import { useState } from 'react'
+import './App.css'
+
+function changeColour(colour) {
+  switch (colour) {
+    case "green":
+      colour = "red";
+      break;
+
+    case "yellow":
+      colour = "green"
+      break;
+
+    case "red":
+      colour = "yellow";
+      break;
+
+    default:
+      colour = "green";
+      break;
+  }
+
+  return colour;
+}
+
+function cycleTimer(colour) {
+  const interval = 1000; // 2 mins
+  console.log("timer started")
+  setTimeout(() => {
+    autoChanger(colour)
+  }, interval);
+}
+
+function autoChanger(colour) {
+  switch(colour) {
+    case ("green"):
+      changeColour(colour);
+      setTimeout(() => {
+        autoChanger(colour)
+      }, 30000);
+      break;
+    case ("red"):
+      changeColour(colour);
+      setTimeout(() => {
+        autoChanger(colour)
+      }, 10000)
+  }
+}
+
+function App() {
+  const [colour, setColour] = useState("green");
+
+  return (
+    <>
+      <div className="traffic-light-wrapper">
+        <button onClick={() => setColour((colour) => changeColour(colour))}>
+          colour is {colour}
+        </button>
+      </div>
+    </>
+  )
+}
+
+export default App
