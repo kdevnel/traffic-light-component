@@ -6,3 +6,4 @@ Dan shared a React code test shared on LinkedIn to create a traffic light compon
 
 This is my attempt at both the React component (using Vite and definitely overkill) and then my first foray into Web Components.
 
+More details on my blog post [Web Components vs. React](https://devnel.blog/2025/05/13/web-components-vs-react/).
